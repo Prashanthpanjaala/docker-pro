@@ -2,43 +2,51 @@ In this project, we leverage Jenkins to create a robust CI/CD pipeline that inte
 
 Tools used:
 
+1.GitHub
+
+2.Jenkins
+
+3.Docker
+
+4.OWASP
+
+5.Trivy
+
+6.Sonarqube
+
+7.NodeJS
+
+
 GitHub
 
-Jenkins
-
-Docker
-
-OWASP
-
-Trivy
-
-Sonarqube
-
-NodeJS
-
-
-GitHub
 GitHub is a platform for hosting and sharing code using Git. It helps developers collaborate by tracking changes, managing versions, and reviewing code. You can create repositories (repos) to store and organize projects. It also offers features like issue tracking and CI/CD workflows.
 
 Jenkins
+
 Jenkins is an automation tool for building and deploying software. It uses pipelines to automate tasks like testing, building, and deploying code. It supports plugins to integrate with various tools. Jenkins makes Continuous Integration and Continuous Delivery (CI/CD) easy.
 
 Docker
+
 Docker is a tool to create, share, and run lightweight virtualized environments called containers. Containers package code and dependencies together for consistent behavior across systems. It simplifies app deployment and avoids “it works on my machine” issues. Docker images are reusable blueprints for containers.
 
 OWASP
+
 OWASP (Open Web Application Security Project) focuses on improving web application security. It provides resources like the OWASP Top 10, a list of the most critical security risks in web apps. Developers use it as a guide to build secure applications. OWASP also creates free tools for security testing.
 
 Trivy
+
 Trivy is a security tool that scans containers, filesystems, and code for vulnerabilities. It detects issues like outdated dependencies and misconfigurations. Easy to use, it integrates with CI/CD pipelines to ensure secure builds. Trivy helps identify security risks early in the development process.
 
 SonarQube
+
 SonarQube analyzes code to find bugs, vulnerabilities, and code smells (poor practices). It gives a detailed report on code quality and suggests improvements. It supports multiple languages and integrates with CI/CD tools. SonarQube helps teams maintain clean, reliable, and secure code.
 
 Node.js
+
 Node.js is a runtime that lets you run JavaScript outside the browser. It’s great for building fast and scalable server-side applications. Node.js uses non-blocking, event-driven programming for high performance. It’s commonly used for web servers, APIs, and real-time apps.
 
 Key Highlights:
+
 Code Quality Assurance:
 
 SonarQube is used to analyze source code, ensuring it adheres to coding standards and detecting bugs, code smells, and vulnerabilities.
