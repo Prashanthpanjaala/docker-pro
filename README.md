@@ -107,8 +107,12 @@ password - admin
 
 Now our sonarqube is up and running
 ![image](https://github.com/user-attachments/assets/41fe59a6-80f3-4583-8ead-e47db4854b3f)
+
+
 Update New password, This is Sonar Dashboard.
 ![image](https://github.com/user-attachments/assets/711fded6-7828-4989-99cb-9675d7788efe)
+
+
 
 STEP-5: Install Trivy
 wget https://github.com/aquasecurity/trivy/releases/download/v0.18.3/trivy_0.18.3_Linux-64bit.tar.gz
@@ -137,10 +141,15 @@ Go to Jenkins Dashboard → Manage Jenkins → Tools
 JDK installations — v17
 ![image](https://github.com/user-attachments/assets/0d8f88c8-0ffa-4e22-ae64-7bcc3cebd970)
 
+
+
 NodeJS installations — v 16
 ![image](https://github.com/user-attachments/assets/0199e591-b63d-4d9a-844f-b000b303af1d)
+
+
 Dependency-Check installations
 ![image](https://github.com/user-attachments/assets/090f5e32-0b66-4e21-95d6-395c2be4f0de)
+
 
 SonarQube Scanner installations
 ![image](https://github.com/user-attachments/assets/7e7936b4-c95f-4e8a-9ee9-40dcda6e1e38)
@@ -151,14 +160,21 @@ STEP-8: Configure Sonar with Jenkins
 
 Goto your Sonarqube Server. Click on Administration → Security → Users → Click on Tokens and Update Token → Give it a name → and click on Generate Token
 ![image](https://github.com/user-attachments/assets/e13e5325-77a8-4bb2-876d-08629b199fb5)
+
+
 click on update Token
 ![image](https://github.com/user-attachments/assets/edef5fba-41c2-4a41-9cae-d7ca3dcc713a)
+
+
 Create a token with a name and generate
 ![image](https://github.com/user-attachments/assets/81b59b21-1103-4180-8058-702bb15d3a69)
 copy Token
 
+
 Goto Jenkins Dashboard → Manage Jenkins → Credentials → System → Global credentials (unrestricted) → Add Secret Text
 ![image](https://github.com/user-attachments/assets/57c3037d-5223-428a-9bd8-850f66c5eda7)
+
+
 Enter detail and click on create
 ![image](https://github.com/user-attachments/assets/c67173e2-32f9-4312-a89a-ac3314bd25fa)
 
@@ -261,22 +277,34 @@ pipeline {
 If you click on Build Now pipeline will start again
 ![image](https://github.com/user-attachments/assets/816dc5c0-b762-458c-bae0-d7a42c8cb749)
 
+
+
 Dependency-Chek Trend
 ![image](https://github.com/user-attachments/assets/e4eeb67c-ffa1-4f23-bddd-8dbf81a862bd)
+
+
 
 Sonarqube report
 ![image](https://github.com/user-attachments/assets/4fd32d4a-bb66-43c8-a620-68dc854c63c3)
 
+
+
 Dependency-Check Results
 ![image](https://github.com/user-attachments/assets/c4d80f05-06c5-4981-a3c2-47aab7e2f395)
 
+
+
 Docker hub registry image
 ![Screenshot (149)](https://github.com/user-attachments/assets/0ef23368-82c0-4782-800a-0825bd5ede68)
+
+
 
 stage view
 ![image](https://github.com/user-attachments/assets/285b1a05-d1b2-4658-aae3-0f7a82f323f9)
 
 Deployed website
+
+
 
 http://<Jenkins-public-ip:3000\>
 ![image](https://github.com/user-attachments/assets/39f8072e-e114-4e1c-bfec-cb79c626782a)
