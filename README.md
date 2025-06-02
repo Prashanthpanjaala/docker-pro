@@ -198,80 +198,9 @@ Click on Apply and Save
 STEP-10: Create a Jenkins Job
 
 Goto Jenkins Dashboard create a job as My-Deployment Name, select pipeline and click on ok.
-pipeline {
-    agent any
-    tools {
-        jdk 'jdk17'
-        nodejs 'node16'
-    }
-    environment {
-        SCANNER_HOME=tool 'sonar-server'
-    }
-    stages {
-        stage ("clean workspace") {
-            steps {
-                cleanWs()
-            }
-        }
-        stage ("Checkout from Git") {
-            steps {
-                git branch: 'main', url: 'https://github.com/devops0014/Zomato-Repo.git'
-            }
-        }
-        stage("Sonarqube Analysis") {
-            steps{
-                withSonarQubeEnv('mysonar') {
-                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=zomato \
-                    -Dsonar.projectKey=zomato '''
-                }
-            }
-        }
-        stage ("quality gate") {
-            steps {
-                script {
-                    waitForQualityGate abortPipeline: false, credentialsId: 'Sonar-Token'
-                }
-            }
-        }
-        stage ("Install dependencies") {
-            steps {
-                sh 'npm install'
-            }
-        }
-        stage ("OWASP FS SCAN") {
-            steps {
-                dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit', odcInstallation: 'DP-Check'
-                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
-            }
-        }
-        stage ("TRIVY FS SCAN") {
-            steps {
-                sh "trivy fs . > trivyfs.txt"
-            }
-        }
-        stage("Docker Build & Push"){
-            steps{
-                script{
-                    withDockerRegistry(credentialsId: 'docker-password') {
-                        sh 'docker build -t image1 .'
-                        sh "docker tag image1 devopsprashanth/zomato:mydockerimage"
-                        sh "docker push devopsprashanth/zomato:mydockerimage"
-                    }
-                }
-            }
-        }
-        stage ("TRIVY") {
-            steps {
-                sh 'trivy image devopsprashanth/zomato:mydockerimage'
-            }
-        }
-        stage ("Deploy to container") {
-            steps {
-                sh 'docker run -d --name zomato -p 3000:3000 devopsprashanth/zomato:mydockerimage'
-            }
-        }
-    }
-}
+
+     
+      
 
 
 If you click on Build Now pipeline will start again
