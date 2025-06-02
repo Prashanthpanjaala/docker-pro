@@ -230,20 +230,20 @@ pipeline {
                 script{
                     withDockerRegistry(credentialsId: 'docker-password') {
                         sh 'docker build -t image1 .'
-                        sh "docker tag image1 shaikmustafa/loki:mydockerimage"
-                        sh "docker push shaikmustafa/loki:mydockerimage"
+                        sh "docker tag image1 devopsprashanth/zomato:mydockerimage"
+                        sh "docker push devopsprashanth/zomato:mydockerimage"
                     }
                 }
             }
         }
         stage ("TRIVY") {
             steps {
-                sh 'trivy image shaikmustafa/loki:mydockerimage'
+                sh 'trivy image devopsprashanth/zomato:mydockerimage'
             }
         }
         stage ("Deploy to container") {
             steps {
-                sh 'docker run -d --name zomato -p 3000:3000 shaikmustafa/loki:mydockerimage'
+                sh 'docker run -d --name zomato -p 3000:3000 devopsprashanth/zomato:mydockerimage'
             }
         }
     }
@@ -264,3 +264,13 @@ Dependency-Check Results
 
 Docker hub registry image
 ![Screenshot (149)](https://github.com/user-attachments/assets/0ef23368-82c0-4782-800a-0825bd5ede68)
+
+stage view
+![image](https://github.com/user-attachments/assets/285b1a05-d1b2-4658-aae3-0f7a82f323f9)
+
+Deployed website
+
+http://<Jenkins-public-ip:3000\>
+![image](https://github.com/user-attachments/assets/39f8072e-e114-4e1c-bfec-cb79c626782a)
+
+
